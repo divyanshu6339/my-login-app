@@ -1,0 +1,91 @@
+.login-box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Neon border glow */
+.login-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+  z-index: 5;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.tracer-line {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #00ff51;
+  box-shadow: 0 0 6px #00ff51, 0 0 12px #00ff51;
+  z-index: 20;
+  animation: move-top 4s linear infinite;
+}
+
+.tracer-line.second {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #00ff51;
+  box-shadow: 0 0 6px #00ff51, 0 0 12px #00ff51;
+  z-index: 20;
+  animation: move-bottom 4s linear infinite;
+}
+
+@keyframes move-top {
+  0%   { top: 0; left: -100%; }
+  50%  { top: 0; left: 100%; }
+  100% { top: 0; left: -100%; }
+}
+
+@keyframes move-bottom {
+  0%   { bottom: 0; left: 100%; }
+  50%  { bottom: 0; left: -100%; }
+  100% { bottom: 0; left: 100%; }
+}
+/* Input Styles */
+.input-container {
+  position: relative;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 12px 12px 6px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 2px solid #3b82f6;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.floating-input:focus {
+  border: 2px solid #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+  border-radius: 6px;
+  padding-top: 20px;
+}
+
+.floating-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 1.1rem;
+  color: #3b82f6;
+  font-weight: 600;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.peer:focus ~ .floating-label,
+.peer:not(:placeholder-shown) ~ .floating-label {
+  top: -6px;
+  left: 10px;
+  font-size: 0.75rem;
+  color: #3b82f6;
+}
