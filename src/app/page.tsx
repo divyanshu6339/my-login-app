@@ -21,7 +21,7 @@ export default function Home() {
     style={{ backgroundImage: 'url(/bg.avif)' }} >
       <form
   onSubmit={handleSubmit}
-  className="relative bg-[#111] p-8 rounded-xl shadow-xl w-96 space-y-8 login-box"
+  className="relative bg-[#174117] p-8 rounded-xl shadow-xl w-96 space-y-8 login-box"
 >
    <span className="tracer-line"></span>
 <span className="tracer-line second"></span>
